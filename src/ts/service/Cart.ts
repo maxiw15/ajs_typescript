@@ -8,6 +8,23 @@ export default class Cart {
     }
 
     get items(): Buyable[] {
-        return [...this._items]; 
+        return [...this._items];
     }
+    getTotalCost(): number {
+    let totalCost = 0;
+    for (let item of this._items) {
+    totalCost += item.price;
+    }
+    return totalCost;
+    }
+
+    getDiscountedTotalCost(discount: number): number {
+    let totalCost = this.getTotalCost();
+    return totalCost - (totalCost * discount);
+    }
+
+    removeItemById(id: number): void {
+    this._items = this._items.filter(item => item.id !== id);
+    }
+
 }

@@ -8,5 +8,11 @@ const cart = new Cart();
 
 cart.add(new Book(1001, 'War and Piece', 'Leo Tolstoy', 2000, 1225));
 cart.add(new MusicAlbum(1008, 'Meteora', 'Linkin Park', 900));
-cart.add(new Movie(1, "Avengers", 2012, "USA", "Avenger Assemble!", ["fantastick"], "137 мин."));
+cart.add(new Movie(1002, "Avengers",100, 2012, "USA", "Avenger Assemble!", ["fantastick"], "137 мин."));
 // console.log(cart.items);
+console.log(cart.getTotalCost())
+console.log(cart.getDiscountedTotalCost(0.5))
+cart.removeItemById(1002)
+console.log(cart.items)
+cart.removeItemById(1001)
+console.log(cart.items)
