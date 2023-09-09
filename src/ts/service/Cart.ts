@@ -11,11 +11,7 @@ export default class Cart {
         return [...this._items];
     }
     getTotalCost(): number {
-    let totalCost = 0;
-    for (let item of this._items) {
-    totalCost += item.price;
-    }
-    return totalCost;
+    return this._items.reduce((acc, item) => acc + item.price, 0);
     }
 
     getDiscountedTotalCost(discount: number): number {
